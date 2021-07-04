@@ -1,0 +1,27 @@
+.box__title{
+    font-family: sans-serif;
+}
+
+.date{
+    margin: 100px auto;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+}
+
+.date__title{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.date__box{
+    margin-bottom: 30px;
+}
+
+.date__input{
+    font-size: 20px;
+}
+
+.date__result{
+    font-size: 20px;
+}
