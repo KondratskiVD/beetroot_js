@@ -72,15 +72,13 @@ main{
     }
 }
 
-@media screen  and (max-width: 610px){
-    .task {
-        min-width: 45%;
-    }
-}
 
 @media screen  and (max-width: 610px){
     .task {
         min-width: 60%;
+    }
+    .task:first-child{
+        margin-top: 25px;
     }
 
 }
