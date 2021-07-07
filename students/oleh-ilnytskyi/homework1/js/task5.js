@@ -1,25 +1,27 @@
-let btn5El = document.getElementById('task5');
+export default function (){
+    let btn5El = document.getElementById('task5');
 
-btn5El.addEventListener('click', function (){
-    alert(checkPalindrom());
-})
+    btn5El.addEventListener('click', function (){
+        alert(checkPalindrom());
+    })
 
-function checkPalindrom(){
+    function checkPalindrom(){
 
-    let userInput, number;
-    do {
-        userInput = prompt('Введите пятизначное число:');
-        if(userInput){
-            if(!(userInput.length === 5)){
-                continue;
+        let userInput, number;
+        do {
+            userInput = prompt('Введите пятизначное число:');
+            if(userInput){
+                if(!(userInput.length === 5)){
+                    continue;
+                }
+                number = parseInt(userInput);
             }
-            number = parseInt(userInput);
-        }
-    } while (!number);
+        } while (!number);
 
-    number = number.toString();
-    if(number[0] === number[0] && number[1] === number[3]) {
-        return `Число ${number} - палиндром`;
+        number = number.toString();
+        if(number[0] === number[0] && number[1] === number[3]) {
+            return `Число ${number} - палиндром`;
+        }
+        return  `Число ${number} - не палиндром`;
     }
-    return  `Число ${number} - не палиндром`;
 }
