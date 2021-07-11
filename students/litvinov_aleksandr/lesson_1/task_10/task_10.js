@@ -110,3 +110,4 @@ function getNextDay() {
 
 
 
+alert(null || 2 || undefined);
