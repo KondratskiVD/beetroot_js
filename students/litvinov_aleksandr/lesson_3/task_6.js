@@ -1,21 +1,10 @@
-let range = [];
+import { checkNumber } from './task_5.js';
 
 function numbers(min, max) {
-    for (i = min; i <= max; i++) {
-        range.push(i)
-    }
-    let newArray = [];
-    for (j = 0; j < range.length; j++) {
-        let sum = 0;
-        for (let k = 1; k < range[j]; k++) {
-            if (range[j] % k === 0) {
-                sum += k;
-            }
-        } if (sum === range[j]) {
-            newArray.push(range[j]);
+    for (let i = min; i <= max; i++) {
+        if (checkNumber(i)) {
+            console.log(i);
         }
-    } return newArray;
+    }
 }
-
-console.log(numbers());
-
+numbers(0, 1000)

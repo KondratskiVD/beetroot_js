@@ -1,15 +1,17 @@
 
 function checkNumber(a) {
     let result = 0;
-    for (i = 1; i < a; i++) {
+    for (let i = 1; i <= (a / 2); i++) {
         if (a % i === 0) {
             result += i;
         }
-    } if (result === a) {
-        return 'true';
+    }
+    if (result === a && a !== 0) {
+        return true;
     } else {
-        return 'false'
+        return false
     }
 }
+export { checkNumber };
+// console.log(CheckNumber())
 
-console.log(checkNumber(24));
