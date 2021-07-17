@@ -11,12 +11,8 @@ export function isPerfectNumber(perNum) {
             sum += i;
         }    
     }
-    if (sum / 2 === perNum) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return (sum / 2 === perNum) ? true : false;
+        
 }
 
 alert(isPerfectNumber(perNum));

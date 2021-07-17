@@ -6,6 +6,6 @@ let y = prompt('Вторая цифра');
 let z = prompt('Третья цифра');
 
 function threeDigit(x,y,z) {
-    return String(x) + String(y) + String(z);
+    return x + y + z;
 }
 alert(`Число: ${threeDigit(x,y,z)}`);
