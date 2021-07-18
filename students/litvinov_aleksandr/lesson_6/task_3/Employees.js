@@ -22,31 +22,18 @@ class EmpTable {
     }
 
     getHtml() {
-        const table = document.getElementById('table');
-        const array = this.array;
-        const head = document.createElement('tr')
-        const th1 = document.createElement('th')
-        const th2 = document.createElement('th')
-        const th3 = document.createElement('th')
-        th1.innerHTML = 'Name'
-        th2.innerHTML = 'Position'
-        th3.innerHTML = 'Salary $'
-        table.append(head);
-        head.append(th1)
-        head.append(th2)
-        head.append(th3)
-        for (let i in array) {
-            let tr = document.createElement("tr");
-            table.append(tr);
-            for (let k in array[i]) {
-                let td = document.createElement("td");
-                td.innerHTML = array[i][k];
-                tr.append(td);
+        let str = '<table style= "max-width: 400px; width: 100%; text-align: center; margin: 100px auto; border: 1px solid #000; border-spacing: 5px; ">';
+        let style = ' style="background: #6f77e9; color: #fff;"'
+        document.write(str);
 
-            }
+        for (let i in this.array) {
+            let newStr = '';
+            newStr = `${newStr}<tr${style}><td${style}>${this.array[i].name}</td><td${style}>${this.array[i].position}</td><td${style}>${this.array[i].salary}</td></tr>`
+            document.write(newStr);
         }
+        document.write('</table>')
     }
 }
-
 const obj = new EmpTable(staff)
 obj.getHtml(staff)
+
