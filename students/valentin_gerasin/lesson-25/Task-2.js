@@ -1,8 +1,7 @@
-let number = +prompt('Введите число')
-
-function factorial(number) {
-    return (number != 1) ? number * factorial(number - 1) : 1;
+function factorial(num) {
+    if (num === 1) return num
+    return num * factorial(num - 1)
 }
 
-alert(factorial(number))
+console.log(factorial(10))
 

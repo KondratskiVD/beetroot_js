@@ -5,9 +5,7 @@ let minute = +prompt('Введите минуты:')
 let second = +prompt('Введите секунды:')
 
 function showTime() {
-    if (hour < 25) {
-        hour = 0 + hour;
-    } else if (hour > 24) {
+    if (hour > 24) {
         hour = '00'
     }
     if (minute < 61) {

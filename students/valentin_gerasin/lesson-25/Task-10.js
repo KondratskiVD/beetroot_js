@@ -17,14 +17,14 @@ function timeInSeconds() {
         let hours = Math.floor(difference / 3600);
         let minutes = Math.floor((difference % 3600) / 60);
         difference = ((difference % 3600) % 60);
-        console.log(hours + ':' + minutes + ':' + difference);
+        console.log(`${hours}:${minutes}:${difference}`);
     } else if (secOne < secTwo) {
         let difference = secTwo - secOne
         alert('Разница ' + difference)
         let hours = Math.floor(difference / 3600);
         let minutes = Math.floor((difference % 3600) / 60);
         difference = ((difference % 3600) % 60);
-        console.log(hours + ':' + minutes + ':' + difference);
+        console.log(`${hours}:${minutes}:${difference}`);
     }
 }
 timeInSeconds();
