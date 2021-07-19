@@ -28,15 +28,8 @@ console.log(shoppingList);
 
 //Вывод всего списка на экран таким образом, чтобы сначала шли некупленные продукты, а потом – купленные.
 
-const newList = [];
-for (let i = 0; i < shoppingList.length; i++) {
-    if (shoppingList[i].isBought) {
-        newList.push(shoppingList[i]);
-    }
-    else {
-        newList.unshift(shoppingList[i]);
-    }
-}
+const newList = shoppingList.sort((a, b) => b.isBought - a.isBought);
+
 console.log(newList);
 
 
@@ -67,8 +60,7 @@ console.log(shoppingList);
 
 //Покупка продукта. Функция принимает название продукта и отмечает его как купленный.
 
-const productName = 'bread';
-function doBought() {
+function doBought(productName) {
     for (let item of shoppingList) {
         if (item.product === productName) {
             item.isBought = true;    
@@ -76,5 +68,4 @@ function doBought() {
     }
     return shoppingList;
 }
-doBought(productName)
-console.log(shoppingList);
+console.log(doBought('bread'));

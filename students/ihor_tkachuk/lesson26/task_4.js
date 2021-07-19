@@ -71,15 +71,11 @@ console.log(sortBySeats(auditorium));
 function sortByName (auditorium) {
 
     let sortbyname = auditorium.sort ((a, b) => {
-        
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
-        return 0;
 
-        // if ((a.name - b.name) < 0) return -1;
-        // return (a.name - b.name) ? 1 : 0;   -- пробовал так, почему-то не срабатывает
+        if (a.name < b.name) return -1;
+        return (a.name > b.name) ? 1 : 0;   
     }
     );
     console.log(sortbyname);
 }
-sortByName(auditorium); // после вывода  результата этой функции результат предыдущей функции становится таким же.
+sortByName(auditorium);
