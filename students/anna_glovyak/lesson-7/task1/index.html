@@ -49,14 +49,13 @@
 
         let olList = document.createElement('ol');
 
-        for (let item of list){
-            
+        list.forEach(elem => {
             let li = document.createElement('li');
-            let text = document.createTextNode(Object.values(item));
+            let text = document.createTextNode(Object.values(elem));
             li.appendChild(text);
             olList.appendChild(li);
-        }
-
+        }); 
+            
         document.body.appendChild(olList);
         console.log(olList);
         }

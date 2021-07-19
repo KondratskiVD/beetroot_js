@@ -41,9 +41,10 @@
         font-size: 20px;
         text-align: center;
         padding: 20px;
-        transition-property: opacity;
+        opacity: 1;
         transition-duration: 0.5s;
-        opacity: 0;
+        transition-property: height, width, opacity;
+        display: none;
     }
 
     .modal-window__button{
@@ -69,17 +70,21 @@
     <script>
         function openForm(){
             let modalForm = document.querySelector('.modal-window');
-
+            modalForm.style.display = 'block';
             setTimeout(() => {
-                modalForm.style.opacity = '1';
-            }, 0);    
+                modalForm.style.height = '350px';
+                modalForm.style.width = '650px';
+            }, 60);    
         }
 
         function closeForm(){
             let closeForm = document.querySelector('.modal-window__button').parentElement;
+            closeForm.style.height = '300px';
+            closeForm.style.width = '600px';
+            closeForm.style.opacity = '0.5'
             setTimeout(() => {
-                closeForm.style.opacity = '0';
-            }, 0)
+                closeForm.style.display = 'none';
+            }, 500)
         }
     </script>
 </body>
