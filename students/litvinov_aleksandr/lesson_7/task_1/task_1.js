@@ -38,12 +38,12 @@ let addSong = (array) => {
     let ol = document.createElement('ol');
     document.body.appendChild(ol)
 
-    for (let i in array) {
-        let info = `${array[i].author} - "${array[i].song}";`
+    array.forEach(composition => {
+        let info = `${composition.author} - "${composition.song}";`
         let textNode = document.createTextNode(info)
         let li = document.createElement('li')
         li.append(textNode)
         ol.append(li)
-    }
+    })
 }
 addSong(playList)
