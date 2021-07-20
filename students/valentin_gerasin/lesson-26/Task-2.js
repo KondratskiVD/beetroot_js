@@ -49,7 +49,9 @@ function getTotalSum(list) {
 }
 
 function getTheMostExpensiveProduct(list) {
-    let theMostExpensiveProduct = list.sort((a, b) => a.price - b.price)[list.length - 1].product;
+    const sortedList = list.sort((a, b) => a.price - b.price)
+    const lastIndex = sortedList.length - 1
+    const theMostExpensiveProduct = sortedList[lastIndex].product;
     console.log(`The most expensive product in check: ${theMostExpensiveProduct}`);
     return theMostExpensiveProduct;
 }
