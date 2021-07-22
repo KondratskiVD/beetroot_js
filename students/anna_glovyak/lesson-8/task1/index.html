@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text, textarea {
+            width: 400px;
+            border: 2px solid rgb(104, 101, 100);
+            background-color: rgb(241, 241, 241);
+            font-size: 20px;
+            padding: 20px;
+            margin: 20px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat labore, quo vitae error voluptates harum sequi ducimus suscipit qui culpa!</div>
+
+    <script>
+        document.addEventListener('keydown', (event) => {   
+            if(event.code === 'KeyE' && event.ctrlKey){
+                event.preventDefault();
+                console.log('УРА!');
+                const div = document.getElementById('text')
+                let textarea = document.createElement('textarea');
+                textarea.setAttribute("id", "text");
+                textarea.innerHTML = div.innerHTML;
+                let parent = div.parentNode;
+                parent.replaceChild(textarea, div);    
+            }
+        })
+        document.addEventListener('keydown', (event) => {
+            if(event.ctrlKey && event.keyCode == 107){
+                event.preventDefault();
+                console.log('УРА!');
+                let textarea = document.getElementById('text');
+                let div = document.createElement('div');
+                div.textContent = textarea.value;
+                div.setAttribute("id", "text")
+                let parent = textarea.parentNode;
+                parent.replaceChild(div, textarea);      
+            }
+        })
+
+    </script>
+</body>
+</html>
