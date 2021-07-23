@@ -20,7 +20,7 @@ function addSeconds() {
             time.minutes = time.minutes - Math.trunc(time.minutes / 60) * 60
         }
     }
-    return console.log(`Время: ${time.hours}:${time.minutes}:${time.seconds}`);
+    console.log(`Время: ${time.hours}:${time.minutes}:${time.seconds}`);
 }
 addSeconds()
 
@@ -30,7 +30,7 @@ function addMinutes() {
         time.hours = time.hours + Math.trunc((time.minutes + min) / 60)
         time.minutes = (time.minutes + min) - Math.trunc((time.minutes + min) / 60) * 60
     }
-    return console.log(`Время: ${time.hours}:${time.minutes}:${time.seconds}`);
+    console.log(`Время: ${time.hours}:${time.minutes}:${time.seconds}`);
 }
 addMinutes()
 
