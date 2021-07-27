@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.traffic-light-body {
+    margin: 0 auto;
+    width: 400px;
+    height: 900px;
+    background-color: black;
+    border-radius: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.off-light {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    background-color: grey;
+    margin-top: 50px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.switch {
+    margin: 0 auto;
+    width: 500px;
+    height: 30px;
+    cursor: pointer;
+}
+
