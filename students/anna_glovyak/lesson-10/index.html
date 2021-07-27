@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .pagination{
+            display: flex;
+            margin: 0 auto;
+            width: 200px;
+            list-style: none;
+            justify-content: space-between;
+            padding: 0;
+            padding-top: 20px;
+        }
+        li{
+            cursor: pointer;
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            color: rgb(255, 255, 255);
+            background-color: rgb(250, 115, 37);
+        }
+        #form{
+            display: flex;
+            margin: 0 auto;
+            padding-top: 30px;
+            justify-content: center;
+        }
+        .movieInput{
+            background-color: rgb(253, 224, 207);
+            border: 2px solid rgb(250, 115, 37);
+        }
+        .movieSelect {
+            background-color: rgb(250, 115, 37);
+            border: 2px solid rgb(250, 115, 37);
+            color: rgb(255, 255, 255);
+        }
+        #searchButton {
+            background-color: rgb(24, 194, 123);
+            border: 2px solid rgb(33, 214, 139);
+            color: rgb(255, 255, 255);
+            width: 100px;
+            text-transform: uppercase;
+        }
+        .see-more {
+            width: 100px;
+            height: 30px;
+            background-color: rgb(250, 115, 37);
+            border: 2px solid rgb(250, 115, 37);
+            color: rgb(255, 255, 255);
+        }
+        .description {
+            display: none;
+            width: 500px;
+            font-size: 19px;
+        }
+        .results {
+            display: flex;
+            justify-content: center;
+        }
+        .film {
+            width: 900px;
+            min-height: 28px;
+            height: auto;
+            border: 1px solid rgb(250, 115, 37);
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .results-list {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="movie-search">
+        <form id="form">
+            <input class="movieInput" type="text" placeholder="put your movie">
+            <select class="movieSelect" name="movieSelect" id="movieSelect">
+                <option value="movie">movie</option>
+                <option value="series">series</option>
+                <option value="episode">episode</option>
+            </select>
+            <button type="submit" id="searchButton">Search</button>
+        </form>
+        <div class="results">
+            <!-- <div class="description">
+            </div> -->
+        </div>
+        
+        <ul class="pagination">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script src="search-movie.js"></script>
+</body>
+</html>
