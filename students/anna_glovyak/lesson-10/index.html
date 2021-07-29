@@ -9,7 +9,7 @@
         .pagination{
             display: flex;
             margin: 0 auto;
-            width: 200px;
+            width: 900px;
             list-style: none;
             justify-content: space-between;
             padding: 0;
@@ -22,6 +22,9 @@
             height: 20px;
             color: rgb(255, 255, 255);
             background-color: rgb(250, 115, 37);
+        }
+        .active-page {
+            border: 2px solid rgb(24, 194, 123);
         }
         #form{
             display: flex;
@@ -86,17 +89,10 @@
             </select>
             <button type="submit" id="searchButton">Search</button>
         </form>
-        <div class="results">
-            <!-- <div class="description">
-            </div> -->
+        <div class="results">  
         </div>
         
-        <ul class="pagination">
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
+        <ul class="pagination"> 
         </ul>
     </div>
     <script src="search-movie.js"></script>
