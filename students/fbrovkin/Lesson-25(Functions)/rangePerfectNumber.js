@@ -3,7 +3,6 @@ function range(lowerBorder, higherBorder) {
     perfectNumber(counter);
   }
 }
-
 function perfectNumber(a) {
   let sum = 0;
   for (i = 0; i < a; i++) {

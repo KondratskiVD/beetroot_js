@@ -1,6 +1,6 @@
 function perfectNumber(a) {
   let sum = 0;
-  for (i = 0; i < a; i++) {
+  for (let i = 0; i < a; i++) {
     if (a % i === 0) {
       sum += i;
     }

@@ -1,13 +1,9 @@
 function compare(a, b) {
   let answer;
   if (a < b) {
-    answer = "-1";
-  } else if (a > b) {
-    answer = "1";
-  } else {
-    answer = "0";
+    return -1;
   }
-  return answer;
+  return a - b ? 1 : 0;
 }
 let a = +prompt("Enter first number"),
   b = +prompt("Enter second number");
