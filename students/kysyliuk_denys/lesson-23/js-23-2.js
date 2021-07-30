@@ -11,5 +11,4 @@ let message = (symbol == 0) ? ')' :
     (symbol == 8) ? '*' :
     (symbol == 9) ? '(':
     'Чел ты...' ;
-
 alert( message );
