@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #list {
+            width: 500px;
+            position: relative;
+        }
+
+        #pagination {
+            display: flex;
+        }
+
+        #pagination li {
+            list-style: none;
+            border: 1px solid;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            padding: 5px;
+            margin: 2px;
+        }
+
+        #pagination li:hover {
+            background: yellow;
+            cursor: pointer;
+        }
+
+        .active {
+            background: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" onclick="" id="search-str" value="">
+    <button onclick="search()">Поиск</button>
+    <select name="" id="movie-type">
+        <option value="movie">Фильмы</option>
+        <option value="series">Сериалы</option>
+        <option value="episode">Эпизод</option>
+    </select>
+
+    <ul id="list"></ul>
+    <ul id="pagination"></ul>
+    <script>
+        let filmTitle = ''
+        let filmType = ''
+        const search = (page = 1) => {
+            filmType = document.getElementById('movie-type').value
+            console.log(filmType);
+            filmTitle = document.getElementById('search-str').value
+            fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=35b02e3a&s=${filmTitle}&type=${filmType}&page=${page}`)
+                .then(response => response.json())
+                .then(data => {
+                    generateList(data.Search)
+                    generatePagination(Math.floor(data.totalResults / 10), page)
+                }).catch((err) => alert("ОШИБКА ПОИСКА!"))
+        }
+        const generateList = (data) => {
+            list.textContent = ''
+            for (let i = 0; i < data.length; i++) {
+                const li = document.createElement('LI')
+                li.innerHTML = data[i].Title + '<button style="position: absolute; right: 0;"><a style="text-decoration: none; color: black;" href="http://www.omdbapi.com">More Info</a></button>'
+                list.append(li)
+            }
+        }
+        const generatePagination = (pagesNumber, activePage) => {
+            pagination.textContent = ''
+            for (let i = 1; i < pagesNumber; i++) {
+                const li = document.createElement('LI')
+                if (activePage === i) {
+                    li.classList.add('active')
+                }
+                li.addEventListener('click', () => {
+                    pagination.textContent = ''
+                    search(i)
+                })
+                li.innerHTML = i
+                pagination.append(li)
+            }
+        }
+    </script>
+</body>
+
+</html>

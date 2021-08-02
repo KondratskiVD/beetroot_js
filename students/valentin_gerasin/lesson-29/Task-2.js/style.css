@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.open-button-container {
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.open-button {
+    margin-top: 50px;
+    width: 400px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.container-modal {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 1200px;
+    height: 90px;
+    display: none;
+}
+
+.modal-window {
+    width: 1000px;
+    height: 100px;
+    background-color: grey;
+    border: 2px solid black;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.close-button {
+    width: 200px;
+    height: 30px;
+    font-size: 24px;
+    cursor: pointer;
+}
