@@ -1,0 +1,236 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.to-buy-card {
+  width: 100%;
+  height: 100vh;
+  background: url("img/Layer 41.png"), #292d3e 13%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tabs {
+  max-width: 600px;
+  max-height: 540px;
+  width: 100%;
+  height: 100%;
+  background-color: #212534;
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: "Lato", sans-serif;
+}
+
+.ui-tabs-nav {
+  background: #2b3040;
+  border: none;
+  color: #8d91a3;
+  padding: 0 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  height: 150px;
+}
+
+.ui-tabs-nav li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ui-tabs-anchor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  height: 50px;
+  font-size: 14px;
+  text-decoration: none;
+  color: #8d91a3;
+  width: 115px;
+  height: 148px;
+  border-bottom: 2px solid #2b3040;
+}
+
+.ui-tabs-anchor span {
+  padding-top: 10px;
+}
+
+.game {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 305px;
+}
+.game__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.game__info {
+  max-width: 310px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+.game__title {
+  height: 80px;
+  color: #fff;
+  font-size: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 400;
+  padding-bottom: 15px;
+}
+.game__realise-date {
+  font-size: 15px;
+  font-weight: 400;
+}
+.game__description {
+  color: #b7bacd;
+  font-size: 13px;
+  padding-bottom: 40px;
+  line-height: 20px;
+}
+.game__rating {
+  width: 67px;
+  height: 67px;
+  border: 1px solid #b7bacd;
+  border-radius: 50%;
+  position: relative;
+}
+.game__rating-svg {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+}
+.game__rating-number {
+  font-size: 20px;
+  color: #b7bacd;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.offer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.offer__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 130px;
+  padding: 0 15px;
+}
+.offer__button {
+  background-color: #13e28d;
+  width: 165px;
+  height: 55px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+.offer__discount {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffdd3f;
+}
+.offer__price {
+  font-size: 28px;
+  color: #fff;
+}
+
+.star {
+  width: 18px;
+  height: 18px;
+}
+
+.game-card {
+  margin: 25px;
+}
+
+.fragment {
+  display: none;
+}
+
+.fragment-active {
+  display: block;
+}
+
+.ui-tabs-anchor-activ {
+  color: white;
+  padding-bottom: -2px;
+  border-bottom: 2px solid white;
+}
