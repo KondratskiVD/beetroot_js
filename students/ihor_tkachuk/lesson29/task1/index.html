@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let playList = [
+        {
+        author: "LED ZEPPELIN",
+        song:" STAIRWAY TO HEAVEN"
+        },
+        {
+        author: "QUEEN",
+        song:" BOHEMIAN RHAPSODY"
+        },
+        {
+        author: "LYNYRD SKYNYRD",
+        song:" FREE BIRD"
+        },
+        {
+        author: "DEEP PURPLE",
+        song:" SMOKE ON THE WATER"
+        },
+        {
+        author: "JIMI HENDRIX",
+        song:" ALL ALONG THE WATCHTOWER"
+        },
+        {
+        author: "AC/DC",
+        song:" BACK IN BLACK"
+        },
+        {
+        author: "QUEEN",
+        song:" WE WILL ROCK YOU"
+        },
+        {
+        author: "METALLICA",
+        song:" ENTER SANDMAN"
+        }
+        ];
+
+        function createList(list) {
+
+            let olList = document.createElement('ol');
+
+            for (let item of list) {
+                let li = document.createElement('li');
+                let text = document.createTextNode(Object.values(item));
+                li.appendChild(text);
+                olList.appendChild(li);
+            }
+
+            document.body.appendChild(olList);
+            console.log(olList);
+        }
+        createList(playList);
+    </script>
+</body>
+</html> 
+    
