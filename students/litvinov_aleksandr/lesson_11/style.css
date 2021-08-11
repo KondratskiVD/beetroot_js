@@ -1,0 +1,110 @@
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.content__inner{
+    padding-top: 60px;
+    padding-bottom: 135px;
+}
+
+.content__text{
+    position: relative;
+}
+
+.icon-plus{
+    position: absolute;
+    top: -30px;
+    right: 555px;
+}
+
+.icon-triangle{
+    position: absolute;
+    top: 233px;
+    left: 350px;
+}
+
+.content__slogan{
+    font-size: 18px;
+    color: rgb(48, 48, 48);
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.065;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content__title{
+    font-size: 86px;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+    text-transform: uppercase;
+    line-height: 1.047;
+    max-width: 1055px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 105px;
+}
+
+.vl1,
+.vl2,
+.vl3,
+.vl4,
+.vl5{
+    position: absolute;
+    border-left: 1px solid #efefef;
+    height: 100vh;
+}
+
+.vl1{
+    left: 16.67%;
+}
+
+.vl2{
+    left: 33.34%;
+}
+
+.vl3{
+    left: 50%;
+}
+
+.vl4{
+    right: 33.34%;
+}
+
+.vl5{
+    right: 16.67%;
+}
+
+.content__slider{
+    position: relative;
+    margin: 0 -22px;
+    padding-left: 135px;
+}
+
+.content__slider-slide{
+    padding: 0 22px;
+}
+
+.slick-arrow{
+    border: none;
+    outline: none;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.content__slider-btn-prev{
+    position: absolute;
+    top: 50%;
+    left: 40px;  
+    transform: translateY(-50%); 
+}
+
+.content__slider-btn-next{
+    position: absolute;
+    right: 20px;
+    bottom: 50%;
+    transform: translateY(50%);
+}
