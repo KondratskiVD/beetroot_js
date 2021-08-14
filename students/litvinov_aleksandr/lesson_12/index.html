@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 33 - Handling Map</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <section class="content">
+        <div class="content__inner">
+            <input class="start" type="text" name="address__one" id="address__one" placeholder="41.3948976,2.0787279">
+            <input class="end" type="text" name="address__two" id="address__two" placeholder="40.4381311,-3.8196208">
+            <input class="content__btn" type="submit" value="Direction">
+        </div>
+        <div class="content__map" id="map"></div>
+
+    </section>
+    <script src="index.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwfaIDAorsw3k8cuDX58YOveKKLAprtl8&callback=initMap"></script>
+
+</body>
+
+</html>
