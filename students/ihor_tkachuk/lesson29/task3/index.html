@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            padding: 30px;
+        }
+        .lights {
+            width: 200px;
+            height: 500px;
+            border-radius: 4px;
+            background: rgb(175, 172, 172);
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .lights__circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgb(153, 167, 182);
+            border: 1px solid black;
+        }
+        .lights__button {
+            display: block;
+            width: 200px;
+            height: 80px;
+            font-size: 30px;
+            margin: 0 auto;
+            margin-top: 40px;
+            color: rgb(226, 229, 226);
+            background: rgb(90, 51, 7);
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="lights">
+        <span class="lights__circle"></span>
+        <span class="lights__circle"></span>
+        <span class="lights__circle"></span>
+    </div>
+    <button class="lights__button" onclick="changeColor()">Переключить</button>
+</body>
+<script>
+
+
+    let lights = document.querySelectorAll('.lights__circle');
+    let counter = 1;
+
+    function changeColor(){
+
+        for(let i = 0; i < lights.length; i++){
+            lights[i].style.background = 'rgb(153, 167, 182)';
+        }
+            switch (counter) {
+                case 1: lights[0].style.background = 'red';
+                    break;
+                case 2: lights[1].style.background = 'orange';
+                    break;
+                case 3: lights[2].style.background = 'green';
+            }
+        (counter == 3) ? counter = 1: counter++;  
+    }
+
+</script>
+</html> 
