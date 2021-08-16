@@ -15,8 +15,9 @@ entry: {
     },
 devtool: isDev == 'development' ? 'inline-source-map' : null,
 devServer: {
+    port: 4200,
     contentBase: './dist',
-    hot: isDev
+    hot: isDev === 'development'
     },
 plugins: [
     new HtmlWebpackPlugin({
