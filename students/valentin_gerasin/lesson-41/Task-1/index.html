@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <style>
+        #app {
+            margin: 0 auto;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app" :style="{background: lastColor, 'min-height': height +'px' }">
+        <input type="text" v-model="color">
+        <button @click="changeBackground">change background</button>
+        <color-list :colors="backgrounds" @child-func="parentFunc"></color-list>
+    </div>
+    <script>
+        Vue.component('color-list', {
+            props: ['colors'],
+            template: `
+            <ul>
+                <li v-for="color in colors" :key="color">
+                    <button @click="changeBackgroundFromComponent(color)">{{color}}</button>
+                </li>
+            </ul>`,
+            methods: {
+                changeBackgroundFromComponent(color) {
+                    this.$emit('child-func', color)
+                }
+            }
+        })
+        new Vue({
+            el: "#app",
+            data: {
+                color: 'red',
+                height: 150,
+                backgrounds: ['green', 'red', 'yellow']
+            },
+            computed: {
+                lastColor() {
+                    return this.backgrounds[this.backgrounds.length - 1]
+                }
+            },
+            methods: {
+                changeBackground() {
+                    this.backgrounds.push(this.color)
+                    this.color = ''
+                },
+                parentFunc(color) {
+                    this.backgrounds.push(color)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
