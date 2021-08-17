@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button @contextmenu.prevent="mouseDown" @click="mouseDown">Нажми, чтобы узнать какая клавиша мыши нажата</button>
+        <p>Нажата клавиша:</p>
+        <span v-if="mouseButton === 1">Левая</span>
+        <span v-if="mouseButton === 3">Правая</span>
+        <hr>
+        <button v-on:click="showDate">Показать время</button>
+        <p>Текущее время: </p><span>{{date}}</span>
+    </div>
+
+    <script>
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                date: '',
+                mouseButton: ''
+            },
+            methods: {
+
+                mouseDown(e){
+                    this.mouseButton = e.which;
+                    console.log(this.mouseButton);
+                },
+                showDate(){
+                    this.date = new Date();
+                }
+            }
+        })
+
+        console.log(app);
+
+    </script>
+</body>
+</html>
