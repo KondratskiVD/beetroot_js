@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="task_1.js"></script>
+</head>
+
+<body>
+    <div id="address-panel">
+        Start:<input type="text" placeholder="start point" id="start">
+        End:<input type="text" placeholder="end point" id="end">
+        <button id="btn-go">GO</button>
+    </div>
+    <div id="map"></div>
+    <div id="warnings-panel"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRcDx5lOymrUtIgOvJgSldKcGiXdWM_xM&callback=initMap&libraries=&v=weekly" async></script>
+</body>
+
+</html>
