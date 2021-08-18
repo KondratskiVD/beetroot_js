@@ -1,0 +1,57 @@
+html {
+    background-image: url(img/Background.png);
+}
+.slick-slide{
+    width: 440px;
+    height: 400px;
+    margin-left: 45px;
+}
+.header {
+    text-align: center
+}
+.header__text-1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #303030;
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+.header__text-2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 86px;
+    line-height: 90px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 105px;
+}
+.slick-arrow{
+    width: 95px;
+    height: 95px;
+    margin-right: 40px;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 95px;
+    color: rgba(255, 255, 255, 0);
+    border: 1px;
+    opacity: 100; 
+    background-size: 100%;
+}
+.slick-prev:before {
+    background-image: url(img/left.png);
+    margin-left: 41px;
+}
+.slick-next:before {
+    background-image: url(img/right.png);
+}
+.slick-current {
+    padding-left: 135px;
+}
+.slick-track {
+    justify-content: center;
+    align-items: center;
+}
