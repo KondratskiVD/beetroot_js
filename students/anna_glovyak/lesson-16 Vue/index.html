@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #app{
+            margin: 0 auto;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+        }
+        button{
+            width: 200px;
+            height: 40px;
+            margin-top: 10px;
+            background-color: rgb(199, 237, 247);
+            border-color: rgb(116, 209, 233);
+            font-size: 20px;
+        }
+        input{
+            width: 176px;
+            height: 40px;
+            border: 2px solid rgb(116, 209, 233);
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        span{
+            color: rgb(27, 103, 122);
+            font-size: 25px;
+            display: block;
+            width: 20px;
+            margin: 0 auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-on:blur="initNumber">
+        <increment @increment-total="incrementTotal"></increment>
+        <decrement v-bind:count="number" @decrement-total="decrementTotal"></decrement>
+        <p></p>
+    </div>
+
+    <script>
+        Vue.component('increment',{
+            props: ['count'],
+            data: function(){
+                return {
+                    count: 0
+                }
+            },
+            template: `<div><button v-on:click="increment">+</button>`,
+            methods: {
+                increment: function(){
+                    this.$emit('increment-total')
+                }
+            }
+        })
+        Vue.component('decrement',{
+            props: ['count'],
+            data: function(){
+                return {
+                    count: 0
+                }
+            },
+            template: `<div><button v-on:click="increment">-</button><br><span>{{count}}</span>`,
+            methods: {
+                increment: function(){
+                    this.$emit('decrement-total')
+                }
+            }
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                number: '',
+                
+            },
+            methods: {
+                incrementTotal: function(){
+                    this.number++;
+                },
+                decrementTotal: function(){
+                    this.number--;
+                },
+                initNumber(e){
+                    this.number = e.target.value;
+                    e.target.value = ''
+                    // console.log(e);
+                }
+            }
+        })
+    </script>
+</body>
+</html>
