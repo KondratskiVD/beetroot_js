@@ -1,0 +1,36 @@
+.container{
+    width: 800px;
+    height: 400px;
+    margin: 100px auto;
+    background-color: rgb(142, 247, 247);
+    border-radius: 25px;
+}
+
+.app{
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.app__btn{
+    font-family: sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid purple;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 24px;
+    margin: 40px;
+}
+
+.app__click,
+.app__time{
+    font-size: 22px;
+    font-family: sans-serif;
+    color: darkred;
+    font-weight: 700;
+    
+}
