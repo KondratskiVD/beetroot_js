@@ -6,30 +6,32 @@
        </div>
        <div>
            <md-card v-for="(user, index) in users" :key="user.cell">
-            <md-card-header>
-                <md-card-header-text>
-                <div class="md-title">{{user.name.first}}</div>
-                <div class="md-subhead">{{user.name.last}}</div>
-                <div :mode="index">Index - {{index}}</div>
-                </md-card-header-text>
+                <md-card-header>
+                    <md-card-header-text>
+                    <div class="md-title">{{user.name.first}}</div>
+                    <div class="md-subhead">{{user.name.last}}</div>
+                    <div :mode="index">Index - {{index}}</div>
+                    </md-card-header-text>
 
-                <md-card-media>
-                <img :src="user.picture.thumbnail" alt="People">
-                </md-card-media>
-            </md-card-header>
-
-
-            <md-card-actions > <!--modal window-->
+                    <md-card-media>
+                    <img :src="user.picture.thumbnail" alt="People">
+                    </md-card-media>
+                </md-card-header>
+            <md-button class="md-primary md-raised" @click="showInfo(index)">Подробнее</md-button>
+            </md-card>
+       </div>
+       <!--modal window-->
+       <md-card-actions v-if="modal"> 
                 <md-dialog :md-active.sync="showDialog">
                 <md-dialog-title>Общая информация</md-dialog-title>
 
                 <md-tabs md-dynamic-height>
                     <md-tab md-label="General">
-                        <div class="info-title">Имя: </div><span>{{user.name.first}}</span>
-                        <div class="info-title">Фамилия:  </div><span>{{user.name.last}}</span>
-                        <div class="info-title">Возраст:  </div><span>{{user.dob.age}}</span>
-                        <div class="info-title">Дата рождения:  </div><span>{{user.dob.date}}</span>
-                        <div class="info-title">Место жительства:  </div><span>{{user.location.street.name}} {{user.location.street.number}}, {{user.location.city}}, {{user.location.state}}</span>
+                        <div class="info-title">Имя: </div><span>{{this.users[index].name.first}}</span>
+                        <div class="info-title">Фамилия:  </div><span>{{this.users[index].name.last}}</span>
+                        <div class="info-title">Возраст:  </div><span>{{this.users[index].dob.age}}</span>
+                        <div class="info-title">Дата рождения:  </div><span>{{this.users[index].dob.date}}</span>
+                        <div class="info-title">Место жительства:  </div><span>{{this.users[index].location.street.name}} {{this.users[index].location.street.number}}, {{this.users[index].location.city}}, {{this.users[index].location.state}}</span>
                     </md-tab>
                 </md-tabs>
 
@@ -37,14 +39,10 @@
                     <md-button class="md-primary" @click="showDialog = false">Close</md-button>
                     <md-button class="md-primary" @click="showDialog = false">Save</md-button>
                 </md-dialog-actions>
-                </md-dialog>
-
-                
+                </md-dialog>  
             </md-card-actions>
-            <md-button class="md-primary md-raised" @click="showInfo">Подробнее</md-button>
-            </md-card>
-       </div>
     </div>
+    
 </template>
 
 
@@ -58,7 +56,8 @@ export default {
         return {
             users: null,
             showDialog: false,
-            index: null
+            index: null,
+            modal: false
         }
     },
     name: 'ProgressSpinnerIndeterminate', 
@@ -74,10 +73,11 @@ export default {
             axios.get('https://randomuser.me/api/?results=9')
             .then(users => this.users = users.data.results)
         },
-        showInfo(payload, index){
+        showInfo(index){
             this.showDialog = true,
-            this.index = index
-            console.log('showInfo work', payload, this.$vnode.key);
+            this.index = index,
+            this.modal = true
+            console.log('showInfo work', index, this.users[index].name.first);
         }
     }
 }
