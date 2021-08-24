@@ -37,7 +37,7 @@
 
                 <md-dialog-actions>
                     <md-button class="md-primary" @click="showDialog = false">Close</md-button>
-                    <md-button class="md-primary" @click="showDialog = false">Save</md-button>
+                    <md-button class="md-primary" @click="deleteUser(index)">Delete</md-button>
                 </md-dialog-actions>
                 </md-dialog>  
             </md-card-actions>
@@ -78,7 +78,12 @@ export default {
             this.index = index,
             this.modal = true
             console.log('showInfo work', index, this.users[index].name.first);
-        }
+        },
+        deleteUser(index){
+            this.users.splice(index, 1),
+            this.showDialog = false,
+            console.log('delete user', index)
+        },
     }
 }
 
