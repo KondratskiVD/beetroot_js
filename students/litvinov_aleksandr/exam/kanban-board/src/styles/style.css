@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'SF-Pro-Display-Bold';
+    src: url(../assets/fonts/SF-Pro-Display-Bold.otf);
+}
+@font-face {
+    font-family: 'SF-Pro-Text-Bold';
+    src: url(../assets/fonts/SF-Pro-Text-Bold.otf);
+}
+@font-face {
+    font-family: 'SF-Pro-Text-Regular';
+    src: url(../assets/fonts/SF-Pro-Text-Regular.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #F3F3F3;
+}
